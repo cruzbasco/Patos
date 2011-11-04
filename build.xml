@@ -7,10 +7,41 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Patos" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Patos.</description>
-    <import file="nbproject/build-impl.xml"/>
-    <!--
+	<project name="Patos" default="default" basedir=".">
+    	<description>Builds, tests, and runs the project Patos.</description>
+    	<import file="nbproject/build-impl.xml"/>
+		<target name="iniciar">
+			<mkdir dir="build" />
+			<mkdir dir="dist" />
+		</target>
+
+		<target name="compilar" depends="iniciar">
+			<javac srcdir="src" destdir="build" includeantruntime="false"/>
+	        <echo message="compilando el proyecto" /> 
+
+		</target>
+
+		<target name="crearJar" depends="compilar">
+		    <jar destfile="dist/patos.jar" basedir="build" />
+	        <echo message="creando el archivo Patos.jar" /> 
+
+		</target>
+
+		<target name="ejecutar" depends="compilar">
+			<java classname="Main" classpath="build" />
+	        <echo message="ejecutando el programa.." /> 
+
+		</target>
+
+		<target name="limpiar">
+			<delete dir="build" />
+			<delete dir="dist" />
+	        <echo message="eliminando las carpetas build y dist" /> 
+		</target>
+
+
+
+<!--
 
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 

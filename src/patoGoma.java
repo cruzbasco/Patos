@@ -1,4 +1,4 @@
-package patos;
+
 
 public class patoGoma extends Pato {
 
