@@ -8,11 +8,7 @@ package patos;
  *
  * @author cruzbasco
  */
-public class Patos {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
     }
