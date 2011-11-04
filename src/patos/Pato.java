@@ -8,10 +8,14 @@ package patos;
  *
  * @author cruzbasco
  */
-public class Pato {
+public abstract  class Pato {
 
-    /**
-     * @param args the command line arguments
-     */
-    
+    public ComportamientoGraznar graznar;
+    public void graznar(){
+        graznar.graznar();
+    }
+    public void setGraznar(ComportamientoGraznar newGraznar){
+        graznar = newGraznar;
+    }
+    public abstract void mostrar();
 }
