@@ -14,6 +14,7 @@ public abstract  class Pato {
     public void graznar(){
         graznar.graznar();
     }
+    
     public void setGraznar(ComportamientoGraznar newGraznar){
         graznar = newGraznar;
     }
